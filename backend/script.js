@@ -69,6 +69,11 @@
 const express = require("express");
 
 const app = express();
+
+// Built-in middleware for parsing JSON and urlencoded data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // Middleware
 app.use((req, res, next) => {
   console.log("Middleware executed");
@@ -87,7 +92,6 @@ app.get("/", (req, res) => {
 app.get("/about", (req, res) => {
   res.send("About Express");
 });
-
 
 // Test error handling middleware
 app.get("/error", (req, res, next) => {
