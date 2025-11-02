@@ -82,7 +82,7 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-  console.log("Second Middleware executed");
+  console.log("Second Middleware executed.");
   next();
 });
 
@@ -106,3 +106,6 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(5000);
+
+
+
